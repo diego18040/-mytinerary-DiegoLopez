@@ -21,7 +21,7 @@ const Card = ({ data }) => {
       </div>
       <div className="p-6 pt-3">
         <NavLink
-          to={`/city/${data.id}`} // Ensure data.id is defined
+          to={`../data/cities/${data.id}`} // Ensure data.id is defined
           className="block w-full rounded-lg bg-gray-900 py-3.5 text-center text-sm font-bold uppercase text-white"
        
        >
