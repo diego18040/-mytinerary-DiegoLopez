@@ -6,20 +6,26 @@ import "../index.css";
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Ordenar las ciudades por población y tomar las 5 más pobladas
+  // Ordenar las ciudades por población y tomar las 12 más pobladas
   const topCities = cities
     .sort((a, b) => b.population - a.population)
-    .slice(0, 5);
+    .slice(0, 12);
+
+  // Agrupar las ciudades en slides de 4
+  const slides = [];
+  for (let i = 0; i < topCities.length; i += 4) {
+    slides.push(topCities.slice(i, i + 4));
+  }
 
   const previous = () => {
     setCurrentIndex((actualIndex) =>
-      actualIndex > 0 ? actualIndex - 1 : topCities.length - 1
+      actualIndex > 0 ? actualIndex - 1 : slides.length - 1
     );
   };
 
   const next = () => {
     setCurrentIndex((actualIndex) =>
-      actualIndex < topCities.length - 1 ? actualIndex + 1 : 0
+      actualIndex < slides.length - 1 ? actualIndex + 1 : 0
     );
   };
 
@@ -27,41 +33,34 @@ const Carousel = () => {
     <div className="relative w-full" id="default-carousel" data-carousel="slide">
       <div className="relative h-56 md:h-96 overflow-hidden rounded-lg">
         {/* Carrusel de imágenes */}
-        {topCities.map((city, index) => (
+        {slides.map((slide, index) => (
           <div
-            key={city.city}
+            key={index}
             className={`${
               index === currentIndex ? "block" : "hidden"
             } duration-700 ease-in-out`}
             data-carousel-item
           >
-            <img
-              src={city.photo}
-              alt={city.city}
-              className="absolute block w-full h-56 md:h-96 object-cover rounded-lg"
-            />
-            <div className="absolute bottom-0 left-0 p-4 bg-opacity-70 bg-gray-800 text-white w-full">
-              <p className="text-lg font-semibold">{city.city}</p>
+            <div className="flex justify-center space-x-4">
+              {slide.map((city) => (
+                <div key={city.city} className="w-1/4">
+                  <img
+                    src={city.photo}
+                    alt={city.city}
+                    className="w-full h-56 md:h-96 object-cover rounded-lg"
+                  />
+                  <div className="absolute bottom-0  p-4 bg-opacity-70 bg-gray-800 text-white w-full">
+                    <p className="text-lg font-semibold">{city.city}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         ))}
       </div>
 
       {/* Indicadores de imágenes */}
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3">
-        {topCities.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            aria-current={index === currentIndex ? "true" : "false"}
-            aria-label={`Slide ${index + 1}`}
-            className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? "bg-blue-500" : "bg-gray-400"
-            }`}
-            type="button"
-          ></button>
-        ))}
-      </div>
+
 
       {/* Botones de navegación */}
       <button
