@@ -1,36 +1,47 @@
-import {useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {useParams, useNavigate} from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams, useNavigate, NavLink } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import {createCity, createItinerariesByCity} from "../redux/actions/cityActions";
+import { createCity, createItinerariesByCity } from "../redux/actions/cityActions";
 
 const Details = () => {
   const params = useParams();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  
+  // Get city data and itineraries from Redux store
   const city = useSelector((store) => store.createCityReducer.city);
   const itineraries = useSelector(
     (store) => store.createItinerariesByCityReducer.itineraries
+    
   );
-
+  console.log(itineraries)
+ 
   useEffect(() => {
-    dispatch(createCity(params.id));
-    dispatch(createItinerariesByCity(params.id));
-  }, []);
-
+    if (params.id) {
+      dispatch(createCity(params.id));
+      dispatch(createItinerariesByCity(params.id));
+    }
+  }, [dispatch, params.id]); // Ensure ID is a dependency
   useEffect(() => {
-    document.title = `${city.city} - MyTinerary`;
+    
+    if (city && city.city) {
+      document.title = `${city.city} - MyTinerary`;
+    }
   }, [city]);
 
-  if (city == "loading") {
+
+  // Loading state handling
+  if (!city || city === "loading") {
     return (
       <main>
         <span>LOADING...</span>
       </main>
     );
   }
-  if (!city || !city.city || !itineraries) {
+
+  // Fallback if city data or itineraries are not available
+  if (!itineraries) {
     return <div className="text-center text-8xl mt-8">LOADING...</div>;
   }
 
@@ -60,17 +71,17 @@ const Details = () => {
         </span>
         <p className="mt-4">{city.description}</p>
         <div className="rounded-md text-center p-4 mt-4">
-          <button
-            onClick={() => navigate(-1)}
+          <NavLink
+            to="/cities" // Absolute path to cities
             className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 hover:shadow-md transition duration-300 ease-in-out"
           >
             Go Back to Cities
-          </button>
+          </NavLink>
         </div>
       </div>
       <Footer />
     </div>
   );
 };
-
 export default Details;
+

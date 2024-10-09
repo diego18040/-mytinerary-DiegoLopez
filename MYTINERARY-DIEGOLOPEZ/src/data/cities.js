@@ -1,6 +1,6 @@
 const cities = [
     {
-        "_id": "64fa501d4bbe915a1f740580",
+        "id": "64fa501d4bbe915a1f740580",
         "city": "Buenos Aires",
         "country": "Argentina",
         "description": "Buenos Aires, the capital of Argentina, is renowned for its vibrant architecture and culture. It's a city that never sleeps, pulsating with life day and night.",
@@ -10,7 +10,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740581",
+        "id": "64fa501d4bbe915a1f740581",
         "city": "São Paulo",
         "country": "Brazil",
         "description": "São Paulo, the largest city in Brazil, is celebrated for its cultural and economic diversity. Skyscrapers dot the skyline, reflecting the city's modernity.",
@@ -20,7 +20,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740582",
+        "id": "64fa501d4bbe915a1f740582",
         "city": "Mexico City",
         "country": "Mexico",
         "description": "Mexico City, the capital of Mexico, is steeped in history while embracing modernity. Its streets teem with stories from ancient civilizations to contemporary art.",
@@ -30,7 +30,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740583",
+        "id": "64fa501d4bbe915a1f740583",
         "city": "Bogotá",
         "country": "Colombia",
         "description": "Bogotá, the capital of Colombia, nestles in the Andes, offering breathtaking views. It's a city where history and nature coexist in perfect harmony.",
@@ -40,7 +40,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740584",
+        "id": "64fa501d4bbe915a1f740584",
         "city": "Lima",
         "country": "Peru",
         "description": "Lima, the capital of Peru, is a tapestry of pre-Columbian and colonial history. Its streets whisper tales of ancient civilizations and Spanish conquests.",
@@ -50,7 +50,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740585",
+        "id": "64fa501d4bbe915a1f740585",
         "city": "Santiago",
         "country": "Chile",
         "description": "Santiago, the capital of Chile, cradles in the embrace of the Andes. A city where modernity meets the majesty of the mountains.",
@@ -60,7 +60,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740586",
+        "id": "64fa501d4bbe915a1f740586",
         "city": "Montevideo",
         "country": "Uruguay",
         "description": "Montevideo, the capital of Uruguay, is a city of sandy beaches and colonial architecture. Each corner whispers stories of a rich maritime history.",
@@ -70,7 +70,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740587",
+        "id": "64fa501d4bbe915a1f740587",
         "city": "Quito",
         "country": "Ecuador",
         "description": "Quito, the capital of Ecuador, cradles in a valley surrounded by volcanoes. It's a city where history meets the untamed beauty of nature.",
@@ -80,7 +80,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740588",
+        "id": "64fa501d4bbe915a1f740588",
         "city": "Caracas",
         "country": "Venezuela",
         "description": "Caracas, the capital of Venezuela, rests in a mountainous valley. It's a city where vibrant culture thrives amidst breathtaking natural beauty.",
@@ -90,7 +90,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f740589",
+        "id": "64fa501d4bbe915a1f740589",
         "city": "La Paz",
         "country": "Bolivia",
         "description": "La Paz, the capital of Bolivia, stands as the highest capital city in the world. Its streets are alive with the energy of a unique blend of cultures.",
@@ -100,7 +100,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f74058a",
+        "id": "64fa501d4bbe915a1f74058a",
         "city": "Asunción",
         "country": "Paraguay",
         "description": "Asunción, the capital of Paraguay, rests on the banks of the Paraguay River. It's a city where history echoes through colonial architecture and vibrant markets.",
@@ -110,7 +110,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f74058b",
+        "id": "64fa501d4bbe915a1f74058b",
         "city": "Cuzco",
         "country": "Peru",
         "description": "Cuzco, the ancient capital of the Inca Empire, is adorned with mesmerizing ruins and colonial architecture. It's a city where every stone tells a story.",
@@ -120,7 +120,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f74058c",
+        "id": "64fa501d4bbe915a1f74058c",
         "city": "Medellín",
         "country": "Colombia",
         "description": "Medellín, an innovative and modern city in Colombia, is cradled by the Andes. It's a city where innovation thrives amidst the beauty of nature.",
@@ -130,7 +130,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f74058d",
+        "id": "64fa501d4bbe915a1f74058d",
         "city": "Rio de Janeiro",
         "country": "Brazil",
         "description": "Rio de Janeiro, famous for its iconic beaches and the statue of Christ the Redeemer, is a city where nature and culture blend in perfect harmony.",
@@ -140,7 +140,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64fa501d4bbe915a1f74058e",
+        "id": "64fa501d4bbe915a1f74058e",
         "city": "Havana",
         "country": "Cuba",
         "description": "Havana, the capital of Cuba, boasts a rich history and colonial architecture. It's a city where time seems to stand still, preserving its unique charm.",
@@ -150,7 +150,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64e4c31b046cc3a26f8094da",
+        "id": "64e4c31b046cc3a26f8094da",
         "country": "China",
         "language": "Mandarin Chinese",
         "foundation": "1949-10-01T00:00:00.000Z",
@@ -163,7 +163,7 @@ const cities = [
         "itineraries": [],
     },
     {
-        "_id": "64d83b1448745abde77f5de3",
+        "id": "64d83b1448745abde77f5de3",
         "country": "Australia",
         "language": "English",
         "foundation": "1788-01-26T00:00:00.000Z",
