@@ -3,8 +3,6 @@ import {useSelector, useDispatch} from "react-redux";
 import {useParams, useNavigate} from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Itinerary from "../components/Itinerary";
-import NoItinerariesFound from "../components/NoItinerariesFound";
 import {createCity, createItinerariesByCity} from "../redux/actions/cityActions";
 
 const Details = () => {
@@ -69,19 +67,6 @@ const Details = () => {
             Go Back to Cities
           </button>
         </div>
-      </div>
-      <div className="container mx-auto py-6 px-4">
-        {itineraries.length === 0 ? (
-          <NoItinerariesFound />
-        ) : itineraries == "loading" ? (
-          <span>LOADING...</span>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {itineraries.map((itinerary, index) => {
-              return <Itinerary data={itinerary} key={index} />;
-            })}
-          </div>
-        )}
       </div>
       <Footer />
     </div>

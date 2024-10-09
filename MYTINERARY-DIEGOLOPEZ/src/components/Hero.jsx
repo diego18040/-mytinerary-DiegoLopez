@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import Carousel from "../components/Carousel";
 import bgImage from '../assets/nature-3719233.jpg';
 import Note from "./Note"
 function Hero() {
@@ -10,8 +9,8 @@ function Hero() {
   };
 
   return (
-    <main>
-      <section className="sm:p-8 rounded-lg mb-6 text-white  bg-opacity-75 sm:px-10 lg:px-16"
+    <main className="bg-gray-800">
+      <section className="sm:p-8 rounded-lg  text-white  bg-opacity-75 sm:px-10 lg:px-16"
 
             style={{
               display: "flex",
@@ -20,6 +19,7 @@ function Hero() {
               justifyContent: "center",
               justifyItems:"center",
               minHeight:"100vh",
+              maxHeight:"100vh",
               paddingleft: "1.5rem",
               paddingright: "1.5rem",
               textAlign:"center",
@@ -40,7 +40,6 @@ function Hero() {
         </button>
       </section>
       <Note></Note>
-      <Carousel />
     </main>
   );
 }

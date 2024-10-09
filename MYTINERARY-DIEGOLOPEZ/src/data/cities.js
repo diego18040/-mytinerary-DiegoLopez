@@ -16,7 +16,7 @@ const cities = [
         "description": "São Paulo, the largest city in Brazil, is celebrated for its cultural and economic diversity. Skyscrapers dot the skyline, reflecting the city's modernity.",
         "foundation": "1554-01-25",
         "population": 12325232,
-        "photo": "https://c0.wallpaperflare.com/preview/797/753/76/architectural-design-architecture-blue-brazil.jpg",
+        "photo": "https://www.benoitproperties.com/wp-content/uploads/2023/09/sao-paulo-header.png",
         "itineraries": [],
     },
     {
@@ -26,7 +26,7 @@ const cities = [
         "description": "Mexico City, the capital of Mexico, is steeped in history while embracing modernity. Its streets teem with stories from ancient civilizations to contemporary art.",
         "foundation": "1325-07-13",
         "population": 8918653,
-        "photo": "https://c0.wallpaperflare.com/preview/983/774/342/mexico-mexico-city-cdmx-ciudad-de-mexico.jpg",
+        "photo": "https://puntodestino.com.mx/wp-content/uploads/2021/03/cdmx.jpg",
         "itineraries": [],
     },
     {
@@ -36,7 +36,7 @@ const cities = [
         "description": "Bogotá, the capital of Colombia, nestles in the Andes, offering breathtaking views. It's a city where history and nature coexist in perfect harmony.",
         "foundation": "1538-08-06",
         "population": 7282406,
-        "photo": "https://c0.wallpaperflare.com/preview/862/151/658/colombia-monserrate-fog-clouds.jpg",
+        "photo": "https://blog.urbansa.co/hubfs/Centro%20de%20la%20ciudad%20-%20El%20centro%20de%20Bogot%C3%A1-Bogot%C3%A1%20de%20noche.jpg",
         "itineraries": [],
     },
     {
@@ -46,7 +46,7 @@ const cities = [
         "description": "Lima, the capital of Peru, is a tapestry of pre-Columbian and colonial history. Its streets whisper tales of ancient civilizations and Spanish conquests.",
         "foundation": "1535-01-18",
         "population": 9120500,
-        "photo": "https://c0.wallpaperflare.com/preview/248/852/978/peru-lima-miraflores-lima-city-thumbnail.jpg",
+        "photo": "https://media.traveler.es/photos/62e73e0ea031e21bace83a5f/16:9/w_1999,h_1124,c_limit/Qu%C3%A9-hacer-en-Lima-Per%C3%BA.jpg",
         "itineraries": [],
     },
     {
@@ -148,6 +148,33 @@ const cities = [
         "population": 2135498,
         "photo": "https://c4.wallpaperflare.com/wallpaper/730/430/537/havana-cuba-sunrise-wallpaper-preview.jpg",
         "itineraries": [],
+    },
+    {
+        "_id": "64e4c31b046cc3a26f8094da",
+        "country": "China",
+        "language": "Mandarin Chinese",
+        "foundation": "1949-10-01T00:00:00.000Z",
+        "population": 1444216107,
+        "photo": "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic2710344.jpg?w=1600",
+        "city": "Beijing",
+        "description": "Embark on a journey through dynasties as you explore the intricate architecture of ancient temples and walk along the iconic Great Wall. Delve into the flavors of authentic Chinese cuisine in local markets.",
+        "smallDescription": "",
+        "featuredLocation": "Great Wall of China",
+        "itineraries": [],
+    },
+    {
+        "_id": "64d83b1448745abde77f5de3",
+        "country": "Australia",
+        "language": "English",
+        "foundation": "1788-01-26T00:00:00.000Z",
+        "population": 5312000,
+        "photo": "https://i.im.ge/2022/08/31/OE8JpC.sidney.png",
+        "city": "Sydney",
+        "description": "The Sydney Opera House is one of the most distinctive and famous 20th-century buildings, and one of the most famous performing arts venues in the world.",
+        "smallDescription": "",
+        "featuredLocation": "Opera Theater",
+        "itineraries": [],
+
     }
 ]
 

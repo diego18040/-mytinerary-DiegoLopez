@@ -12,7 +12,7 @@ const Footer = () => {
               <img
                 src= {Created} // Cambia esto con tu logo
                 alt="MyTinerary Logo"
-                className="h-20 me-3"
+                className="h-8 me-3"
               />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 MyTinerary
