@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { FaWhatsapp, FaEnvelope, FaInstagram } from "react-icons/fa";
+import Created from "../assets/Diego.png";
 
 const Footer = () => {
   return (
@@ -9,9 +10,9 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <a href="/" className="flex items-center">
               <img
-                src="../assets/Created.png" // Cambia esto con tu logo
+                src= {Created} // Cambia esto con tu logo
                 alt="MyTinerary Logo"
-                className="h-8 me-3"
+                className="h-20 me-3"
               />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 MyTinerary

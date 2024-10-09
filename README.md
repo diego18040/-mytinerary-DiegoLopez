@@ -32,4 +32,7 @@ index.css file
 
 @tailwind utilities;
 
+
 npm install react-redux
+
+and finshed for to web active 

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import bgImage from '../assets/nature-3719233.jpg';
-
+import Note from "./Note"
 function Hero() {
   const navigate = useNavigate();
 
@@ -10,16 +10,25 @@ function Hero() {
   };
 
   return (
-    <main
-      className="flex flex-col items-center justify-center min-h-screen px-6 sm:px-10 lg:px-16 text-center bg-center bg-no-repeat text-white"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <section className="p-6 sm:p-8 rounded-lg mb-6 max-w-xl lg:max-w-2xl bg-opacity-75">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">Find your perfect trip,</h1>
+    <main>
+      <section className="sm:p-8 rounded-lg mb-6 text-white  bg-opacity-75 sm:px-10 lg:px-16"
+
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems:"center",
+              justifyContent: "center",
+              justifyItems:"center",
+              minHeight:"100vh",
+              paddingleft: "1.5rem",
+              paddingright: "1.5rem",
+              textAlign:"center",
+              backgroundPosition:"center",
+              backgroundRepeat:"no-repeat",
+              backgroundImage: `url(${bgImage})`,
+              backgroundSize: "cover",
+            }}>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4 ">Find your perfect trip,</h1>
         <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4">
           Designed by insiders who know and love their cities!
         </h2>
@@ -30,6 +39,7 @@ function Hero() {
           Explore Cities
         </button>
       </section>
+      <Note></Note>
       <Carousel />
     </main>
   );

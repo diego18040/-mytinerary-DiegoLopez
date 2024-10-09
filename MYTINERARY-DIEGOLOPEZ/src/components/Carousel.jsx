@@ -1,28 +1,33 @@
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import  cities  from "../data/cities";
+import cities from "../data/cities";
 import "../index.css";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Ordenar las ciudades por población y tomar las 5 más pobladas
+  const topCities = cities
+    .sort((a, b) => b.population - a.population)
+    .slice(0, 5);
+
   const previous = () => {
     setCurrentIndex((actualIndex) =>
-      actualIndex > 0 ? actualIndex - 1 : cities.length - 1
+      actualIndex > 0 ? actualIndex - 1 : topCities.length - 1
     );
   };
 
   const next = () => {
     setCurrentIndex((actualIndex) =>
-      actualIndex < cities.length - 1 ? actualIndex + 1 : 0
+      actualIndex < topCities.length - 1 ? actualIndex + 1 : 0
     );
   };
 
   return (
     <div className="relative w-full" id="default-carousel" data-carousel="slide">
-      <div className="relative h-96 overflow-hidden rounded-lg">
+      <div className="relative h-56 md:h-96 overflow-hidden rounded-lg">
         {/* Carrusel de imágenes */}
-        {cities.map((city, index) => (
+        {topCities.map((city, index) => (
           <div
             key={city.city}
             className={`${
@@ -33,7 +38,7 @@ const Carousel = () => {
             <img
               src={city.photo}
               alt={city.city}
-              className="absolute block w-full h-96 object-cover rounded-lg"
+              className="absolute block w-full h-56 md:h-96 object-cover rounded-lg"
             />
             <div className="absolute bottom-0 left-0 p-4 bg-opacity-70 bg-gray-800 text-white w-full">
               <p className="text-lg font-semibold">{city.city}</p>
@@ -44,7 +49,7 @@ const Carousel = () => {
 
       {/* Indicadores de imágenes */}
       <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3">
-        {cities.map((_, index) => (
+        {topCities.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
@@ -60,7 +65,7 @@ const Carousel = () => {
 
       {/* Botones de navegación */}
       <button
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={previous}
         type="button"
       >
@@ -71,7 +76,7 @@ const Carousel = () => {
       </button>
 
       <button
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={next}
         type="button"
       >
@@ -85,4 +90,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-

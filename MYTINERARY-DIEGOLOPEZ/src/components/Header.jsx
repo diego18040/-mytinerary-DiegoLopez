@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Logo from "../assets/Logo.png"
 import "../../src/index.css";
 
 const Header = () => {
@@ -21,8 +22,8 @@ const Header = () => {
         >
           <img
             alt="Flowbite Logo"
-            className="h-8"
-            src="https://flowbite.com/docs/images/logo.svg"
+            className="h-10"
+            src={Logo}
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             MyTinerary
