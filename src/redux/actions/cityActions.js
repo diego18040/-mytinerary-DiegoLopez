@@ -5,6 +5,10 @@ import {apiURL} from "../../utils/apiURL";
 
 /* Filtros con "createAction". Actions no va lógica, acá solo van y pasan actions para pasarle al reducer, la lógica va en el reducer. */
 
+
+// Acción para obtener las ciudades de la API
+
+
 // Acción para crear una sola ciudad por nombre
 export const createCity = createAsyncThunk("createCity", async (name) => {
   try {

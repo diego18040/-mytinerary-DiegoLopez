@@ -6,6 +6,7 @@ import Main from "./components/Main";
 import Details from "./pages/Details";
 import Error404 from "./pages/Error404";
 import { logInWithToken } from "./redux/actions/userActions";
+import UnderConstruction from "./components/UnderConstruction";
 
 const ProtectedRoute = ({ children }) => {
   const isOnline = useSelector((store) => store.userSignUpReducer.isOnline);
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/data/cities/:id", // Use a parameterized route for the city details
     element: <Details />,
+  },
+  {
+    path: "/components/UnderContruction.jsx",
+    element : <UnderConstruction />,
   },
   {
     path: "*",

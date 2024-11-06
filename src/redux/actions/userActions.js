@@ -34,7 +34,7 @@ export const userSignIn = createAsyncThunk("userSignIn", async (userData) => {
 
 export const logInWithToken = createAsyncThunk("logInWithToken", async () => {
   const token = localStorageFn.getText("token");
-  const res = await axios.get(apiURL + "auth/token", {
+  const res = await axios.get(apiURL, {
     headers: {
       Authorization: "Bearer " + token,
     },
