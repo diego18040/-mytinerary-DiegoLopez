@@ -18,7 +18,7 @@ const LoginForm = () => {
   };
 
   const loginWithGoogle = () => {
-    window.location.href = "http://localhost:8080/api/auth/signin/google";
+    window.location.href = "http://localhost:8080/api/auth/signin/google/";
   };
 
   const loading = authStore.loading;

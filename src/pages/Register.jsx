@@ -30,10 +30,10 @@ const SignUpForm = () => {
 
     const formattedData = {
       name: formData.firstName,
-      lastname: formData.lastName,
+      lastname: formData.lastName || "Apellido no especificado",
       email: formData.email,
       password: formData.password,
-      photo: formData.photoURL,
+      photo: formData.photoURL || "https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png",
       country: formData.country,
     };
 
