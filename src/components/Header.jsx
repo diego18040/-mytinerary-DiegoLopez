@@ -1,16 +1,25 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.png";
+import { getCities } from "../../store/actions/citiesActions";
+import { logout } from "../../store/actions/authActions";
 import "../../src/index.css";
 
-const Header = () => {
+const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const user = useSelector((store) => store.userSignUpReducer.user);
-  const isOnline = useSelector((store) => store.userSignUpReducer.isOnline);
+  const token = useSelector((state) => state.authStore.token); // Token del usuario
+  const user = useSelector((state) => state.userSignUpReducer.users3); // Información del usuario
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Cambiar el estado para abrir/cerrar el menú
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleSignOut = () => {
+    dispatch( logout()); // Acción de logout
+    navigate("/"); // Redirige al login tras cerrar sesión
   };
 
   return (
@@ -20,12 +29,32 @@ const Header = () => {
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img alt="Flowbite Logo" className="h-10" src={Logo} />
+          <img alt="Logo" className="h-10" src={Logo} />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             MyTinerary
           </span>
         </NavLink>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          {token ? (
+            <div className="flex items-center space-x-4">
+              <span className="text-gray-900 dark:text-white">
+                Welcome, {user?.name || "User"}
+              </span>
+              <button
+                onClick={handleSignOut}
+                className="py-2 px-4 text-white bg-red-500 hover:bg-red-600 rounded-lg"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <NavLink
+              to="/sign-in"
+              className="py-2 px-4 text-white bg-blue-700 hover:bg-blue-800 rounded-lg"
+            >
+              Sign In
+            </NavLink>
+          )}
           <button
             aria-controls="navbar-sticky"
             aria-expanded={menuOpen}
@@ -54,7 +83,7 @@ const Header = () => {
         <div
           className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
             menuOpen ? "block" : "hidden"
-          }`} // Mostrar/ocultar menú basado en el estado `menuOpen`
+          }`}
           id="navbar-sticky"
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -89,5 +118,5 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NavBar;
 
