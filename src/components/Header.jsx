@@ -30,7 +30,7 @@ const NavBar = () => {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img alt="Logo" className="h-10" src={Logo} />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-lg sm:text-2xl font-semibold whitespace-nowrap dark:text-white">
             MyTinerary
           </span>
         </NavLink>
